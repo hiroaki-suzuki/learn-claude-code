@@ -72,3 +72,8 @@ The project is currently in the planning stage. Before beginning implementation:
 4. Initialize ADR documentation for technical decisions
 
 Future instances should prioritize completing the TODO application implementation over starting new experiments, unless explicitly requested to explore different technologies.
+
+## Development Principles
+
+- ファイルのフォーマットは必ず実施する
+- ファイルのLintは必ず実施する
