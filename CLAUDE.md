@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Language Preference
+
+Please respond in Japanese (日本語) unless explicitly requested otherwise.
+
 ## Project Overview
 
 This is a learning project for experimenting with Claude Code functionality. The repository currently contains minimal structure and serves as a sandbox for exploring Claude Code capabilities.
@@ -15,3 +19,7 @@ This is a new repository with minimal content:
 ## Development Notes
 
 As this is a learning repository, there are no established build processes, testing frameworks, or specific development workflows yet. The structure will evolve as learning exercises are added.
+
+## Git Guidelines
+
+- Gitのコミットメッセージは日本語で作成する
