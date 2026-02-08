@@ -30,6 +30,7 @@
         "${workspaceFolder}/app/.venv/bin/ty"
     ],
     "ty.configurationFile": "${workspaceFolder}/app/ty.toml",
+    "pythonTestExplorer.testFramework": "pytest",
     "cSpell.words": [
         "AUTOCOMPACT",
         "autopep",
@@ -43,10 +44,12 @@
         "eamodio",
         "fdisk",
         "frontmatter",
+        "fullwidth",
         "isort",
         "Keifu",
         "keymap",
         "mhutchie",
+        "mixedspaceshere",
         "modelcontextprotocol",
         "netcat",
         "netrc",
