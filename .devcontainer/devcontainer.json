@@ -1,0 +1,63 @@
+{
+    "name": "Learn Claude Code devcontainer",
+    "build": {
+        "dockerfile": "./Dockerfile"
+    },
+    "runArgs": [
+        "--name",
+        "learn-claude-code-devcontainer"
+    ],
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "configureZshAsDefaultShell": true
+        },
+        "ghcr.io/devcontainer-community/devcontainer-features/astral.sh-uv:1": {
+            "version": "0.10.0",
+            "shellautocompletion": true
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "24.13.0"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "-github.copilot-chat",
+                "-ms-python.autopep8",
+                "-ms-python.vscode-pylance",
+                "-ms-python.vscode-python-envs",
+                "anthropic.claude-code",
+                "astral-sh.ty",
+                "charliermarsh.ruff",
+                "codezombiech.gitignore",
+                "eamodio.gitlens",
+                "mhutchie.git-graph",
+                "ms-python.debugpy",
+                "ms-python.python",
+                "njpwerner.autodocstring",
+                "ryu1kn.partial-diff",
+                "streetsidesoftware.code-spell-checker",
+                "tamasfe.even-better-toml",
+                "tyriar.sort-lines",
+                "wayou.vscode-todo-highlight",
+                "yzhang.markdown-all-in-one"
+            ]
+        }
+    },
+    "remoteUser": "vscode",
+    "containerEnv": {
+        "TZ": "Asia/Tokyo",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "UV_ENV_FILE": ".env",
+        "UV_LINK_MODE": "copy",
+        "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+    },
+    "mounts": [
+        "type=volume,source=claude-code-config-${devcontainerId},target=/home/vscode/.claude",
+        "type=volume,source=tmux-${devcontainerId},target=/home/vscode/.tmux"
+    ],
+    "onCreateCommand": "chmod +x .devcontainer/post-create.sh .devcontainer/post-start.sh",
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "postStartCommand": "bash .devcontainer/post-start.sh"
+}
