@@ -40,7 +40,8 @@
                 "tamasfe.even-better-toml",
                 "tyriar.sort-lines",
                 "wayou.vscode-todo-highlight",
-                "yzhang.markdown-all-in-one"
+                "yzhang.markdown-all-in-one",
+                "LittleFoxTeam.vscode-python-test-adapter"
             ]
         }
     },
@@ -51,7 +52,8 @@
         "LC_ALL": "en_US.UTF-8",
         "UV_ENV_FILE": ".env",
         "UV_LINK_MODE": "copy",
-        "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
+        "CLAUDE_CONFIG_DIR": "/home/vscode/.claude",
+        "CLAUDE_PROJECT_DIR": "/workspaces/learn-claude-code"
     },
     "mounts": [
         "type=volume,source=claude-code-config-${devcontainerId},target=/home/vscode/.claude",
