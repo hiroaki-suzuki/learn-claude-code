@@ -1,0 +1,94 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 4,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    "python.defaultInterpreterPath": "${workspaceFolder}/app/.venv/bin/python",
+    "python.languageServer": "None",
+    "ruff.path": [
+        "${workspaceFolder}/app/.venv/bin/ruff"
+    ],
+    "ruff.configuration": "${workspaceFolder}/app/ruff.toml",
+    "ty.path": [
+        "${workspaceFolder}/app/.venv/bin/ty"
+    ],
+    "ty.configurationFile": "${workspaceFolder}/app/ty.toml",
+    "cSpell.words": [
+        "AUTOCOMPACT",
+        "autopep",
+        "bytebase",
+        "catppuccin",
+        "charliermarsh",
+        "codezombiech",
+        "dbhub",
+        "debugpy",
+        "dont",
+        "eamodio",
+        "fdisk",
+        "frontmatter",
+        "isort",
+        "Keifu",
+        "keymap",
+        "mhutchie",
+        "modelcontextprotocol",
+        "netcat",
+        "netrc",
+        "njpwerner",
+        "nvim",
+        "osascript",
+        "packpath",
+        "pycodestyle",
+        "pyflakes",
+        "pynvim",
+        "pypirc",
+        "pyproject",
+        "pytest",
+        "pyupgrade",
+        "runtimepath",
+        "shellautocompletion",
+        "statusline",
+        "tamasfe",
+        "trixie",
+        "tyriar",
+        "vimrc",
+        "wayou",
+        "yazi",
+        "yzhang"
+    ],
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "cSpell.fixSpellingWithRenameProvider": true,
+        "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+        "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
+    }
+}
