@@ -48,3 +48,9 @@ def remove_fullwidth_spaces(text: str) -> str:
         'mixedspaces here'
     """
     return text.replace("　", "")
+
+
+def test_format_hook(text: str, number: int) -> str:
+    """自動フォーマットフックのテスト用関数（意図的にフォーマット崩し）"""
+    result = text + " " + str(number)
+    return result
