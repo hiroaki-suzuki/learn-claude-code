@@ -30,16 +30,43 @@ Claude Codeの機能を学習するためのプロジェクト。2025年9月以�
 - CLAUDE.mdや.claude/rules/などのサンプルのMarkdownは日本語とする
 - サンプルコードのコメントは日本語とする
 
+## プロジェクト構造
+
+```
+/workspaces/learn-claude-code/    ← Gitリポジトリのルート
+└── app/                          ← Pythonプロジェクトのルート（pyproject.toml、.envがここにある）
+    ├── pyproject.toml
+    ├── .env
+    ├── utils/
+    └── tests/
+```
+
+**重要**: `pyproject.toml`と`.env`が`app/`ディレクトリにあるため、**すべてのuvコマンドは`app/`ディレクトリから実行**してください。
+
 ## よく使うコマンド
 
+**前提**: 以下のコマンドはすべて`app/`ディレクトリから実行してください。
+
 ```bash
+# ディレクトリ移動
+cd /workspaces/learn-claude-code/app
+
 # アプリ実行
-uv run python app/main.py
+uv run python main.py
 
 # リント・フォーマット・型チェック
-uv run ruff check app/
-uv run ruff format app/
-uv run ty check app/
+uv run ruff check .
+uv run ruff format .
+uv run ty check .
+
+# テスト実行
+uv run pytest tests/ -v
+
+# カバレッジ付きテスト
+uv run pytest tests/ --cov=app --cov-report=term-missing
+
+# 特定のテストファイルを実行
+uv run pytest tests/utils/test_text.py -v
 ```
 
 ## Key Commands for Learning
@@ -69,3 +96,26 @@ ls -la .claude/
 ## 学習の再開
 
 「学習を再開します」と言われたら`docs/claude-code-learning-plan.md`を読んで、進捗管理チェックリストを確認し、次のフェーズから開始してください。
+
+## 既知の不具合（2026年2月時点）
+
+**重要:** Claude Codeには以下の既知の不具合があります。作業時は注意してください。
+
+### 1. パスベースのルールがWrite操作で適用されない
+- **イシュー:** [#23478](https://github.com/anthropics/claude-code/issues/23478)
+- **影響:** `.claude/rules/`のpath-basedルールが新規ファイル作成時に無視される
+- **対処:** 重要なファイル作成規約はCLAUDE.mdにも記載する、またはPostToolUseフックで対処
+
+### 2. CLAUDE.mdのルールが無視される場合がある
+- **イシュー:** [#19635](https://github.com/anthropics/claude-code/issues/19635), [#20401](https://github.com/anthropics/claude-code/issues/20401)
+- **対処:** 重要なルールは短く明確に記述し、Stop hookでリマインダーを実装
+
+### 3. `.claudeignore`が機能しない（セキュリティ問題）
+- **影響:** `.env`など機密ファイルがignoreされない
+- **対処:** 機密ファイルはプロジェクト外で管理する、PreToolUseフックでブロック
+
+### 4. 設定の構文問題
+- 絶対パスは`//`で始める必要がある（`/`ではない）
+- `permissions.deny`はファイルのメモリロードを防げない可能性
+
+**詳細:** `docs/claude-code-learning-plan.md`のセクション1.3参照
