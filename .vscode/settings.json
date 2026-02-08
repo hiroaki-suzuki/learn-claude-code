@@ -3,6 +3,16 @@
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file",
     "editor.tabSize": 4,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.ruff_cache": true
+    },
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.codeActionsOnSave": {
@@ -42,6 +52,7 @@
         "netrc",
         "njpwerner",
         "nvim",
+        "oneline",
         "osascript",
         "packpath",
         "pycodestyle",
