@@ -25,4 +25,5 @@ select = [
 
 [lint.per-file-ignores]
 "__init__.py" = ["F401"]
-
+# 日本語の関数名を許可（テストで使用）
+"test_*.py" = ["N802"]
