@@ -31,7 +31,9 @@
                 "charliermarsh.ruff",
                 "codezombiech.gitignore",
                 "eamodio.gitlens",
+                "LittleFoxTeam.vscode-python-test-adapter",
                 "mhutchie.git-graph",
+                "ms-azuretools.vscode-containers",
                 "ms-python.debugpy",
                 "ms-python.python",
                 "njpwerner.autodocstring",
@@ -40,8 +42,7 @@
                 "tamasfe.even-better-toml",
                 "tyriar.sort-lines",
                 "wayou.vscode-todo-highlight",
-                "yzhang.markdown-all-in-one",
-                "LittleFoxTeam.vscode-python-test-adapter"
+                "yzhang.markdown-all-in-one"
             ]
         }
     },
